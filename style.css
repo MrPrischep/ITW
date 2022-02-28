@@ -63,7 +63,6 @@ h2 {
 }
 
 .kontakty, .souvisle {
-    background: rgb(80, 30, 10);
     padding-top: 20px;
     color: #f1f1f1;
     padding-left: 30px;
@@ -191,3 +190,17 @@ table {
     margin-right: 20px;
 }
 
+footer {
+    background: url(/icons/footer_bg.gif);
+}
+
+.imagetip span {
+    position: absolute;
+    display: none;
+    transition: .5s;
+}
+
+.imagetip:hover span {
+    display: block;
+    
+}
