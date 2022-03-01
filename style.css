@@ -10,13 +10,22 @@
 body {
   color: #0f141e;
   font-size: 16px;
-  font-weight: normal;
+  /* font-weight: normal; */
   font-family: 'Helvetica', sans-serif;
 }
 
 .head {
     padding-top: 50px;
     background: rgb(80, 30, 10);
+    padding-bottom: 70px;
+}
+
+.head a {
+    color: white;
+}
+
+.head a:visited {
+    color: white;
 }
 
 .head h1 {
@@ -33,6 +42,13 @@ h2 {
 .navigator {
     margin-top: 50px;
     display: block;
+    position: absolute;
+    margin-left: 120px;
+}
+
+.navigator ul {
+    display: flex;
+    list-style: none;
 }
 
 .navigator a {
@@ -49,7 +65,7 @@ h2 {
 }
 
 .predmet {
-    background: #ebe3df;
+    background: #f1f1f1;
     padding-top: 15px;
     padding-bottom: 40px;
 }
@@ -63,6 +79,7 @@ h2 {
 }
 
 .kontakty, .souvisle {
+    background: rgb(80, 30, 10);
     padding-top: 20px;
     color: #f1f1f1;
     padding-left: 30px;
@@ -190,17 +207,25 @@ table {
     margin-right: 20px;
 }
 
-footer {
-    background: url(/icons/footer_bg.gif);
-}
-
-.imagetip span {
+/* .imagetip span {
     position: absolute;
     display: none;
     transition: .5s;
+} */
+
+:root {
+    --navImg: url("/icons/menu_bullet.gif");
+} 
+
+.imagetip:hover ::after {
+    display: block;
+    text-align: center;
+    content: var(--navImg);
+    margin-top: 5px;
+    margin-left: 25px;
 }
 
-.imagetip:hover span {
+/* .imagetip:hover span {
     display: block;
-    
-}
+    text-align: center;
+} */
