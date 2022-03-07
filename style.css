@@ -16,7 +16,7 @@ nav {
     width: 100%;
     background: #08105a;
     position: fixed;
-    z-index: 1;
+    z-index: 200;
     border: 1px solid white;
 }
 
@@ -52,12 +52,21 @@ nav .navElem {
 nav .navElem.active {
     border: 1px solid rgb(9, 155, 192);
     color: rgb(9, 155, 192);
-    transition:  1s;
+    transition:  .5s;
 }
 
 nav a:hover {
     border: 1px solid rgb(9, 155, 192);
     transition:  1s;
+}
+
+nav #medium {
+    font-size: 30px;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
 }
 
 nav #icon {
@@ -134,7 +143,7 @@ nav #icon {
     border-radius: 5px;
 }
 
-@media (max-width: 544px) {
+/* @media (max-width: 544px) {
     label.logo {
         font-size: 32px;
         padding-left: 60px;
@@ -147,43 +156,7 @@ nav #icon {
     nav a {
         font-size: 17px;
     }
-}
-
-@media (max-width: 992px) {
-    nav #icon {
-        display: block;
-    }
-    
-    nav ul {
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #444649;
-        left: -100%;
-        top: 80px;
-        text-align: center;
-        transition: all .5s;
-    }
-
-    nav li {
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-    }
-
-    nav a {
-        font-size: 20px;
-    }
-
-    a.active, a:hover {
-        border: none;
-        color: rgb(9, 155, 192);
-    }
-
-    nav ul.show {
-        left: 0;
-    }
-}
+} */
 
 .prednasky {
     position: relative;
@@ -219,6 +192,11 @@ nav #icon {
     padding-right: 40px;
     text-align: center;
     cursor: default;
+}
+
+.sidebar h2 {
+    display: flex;
+    text-align: center;
 }
 
 .sidebar a {
@@ -507,4 +485,166 @@ button:focus {
     color: rgb(9, 155, 192);
     box-shadow: 0 0 15px rgb(9, 155, 192);
     text-shadow: 0 0 15px rgb(9, 155, 192);
+}
+
+@media (max-width: 1094px) {
+    nav #medium {
+        display: block;
+    }
+
+    nav #medium i {
+        font-size: 18px;
+        position: relative;
+    }
+    
+    nav #medium .navElem {
+        padding: 9px 12px;
+    }
+    
+    nav #medium .navElem:hover::after {
+        display: flex;
+        content: attr(data-title);
+        background: #444649;
+        position: absolute;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        top: 70px;
+        margin-left: 20px;
+        font-size: 14px;
+        font-weight: 500;    
+        height: 30px;
+        padding: 0 10px;
+        border-radius: 10px;  
+    }
+
+    nav #medium .navElem.active:hover::after {
+        color: white;
+    }
+
+    nav ul:nth-child(2) {
+        display: none;
+    }
+
+    nav ul {
+        margin-right: 20px;
+    }
+
+    nav li {
+        margin: 0 20px;
+    }
+    
+    .o_predmetu {
+        padding: 110px 20px 30px 20px;
+    }
+
+    .o_predmetu h1 {
+        font-size: 28px;
+    }
+
+    .o_predmetu p {
+        padding: 30px 60px 0px 60px;
+        font-size: 18px;
+    }
+
+    .sidebar h1 {
+        font-size: 30px;
+    }
+
+    .sidebar h2 {
+        display: flex;
+        text-align: center;
+    }
+
+    .sidebar a {
+        font-size: 18px;
+    }
+
+    .vysledky {
+        padding: 30px;
+    }
+
+    .vysledky h1 {
+        font-size: 28px;
+    }
+
+    .table {
+        margin-top: 30px;
+        font-size: 14px;
+    }
+
+    .prac_head {
+        padding: 30px;
+    }
+
+    .slide {
+        height: 40vh;
+    }
+
+    .slide h3 {
+        font-size: 20px;
+    }
+
+    .slide p {
+        font-size: 14px;
+    }
+
+    .cviceni {
+        padding-bottom: 30px;
+    }
+
+    .souvisle {
+        padding: 30px 30px 30px 40px;
+    }
+
+    .souv_head h1 {
+        font-size: 30px;        
+    }
+
+    .card {
+        height: 240px;
+        width: 240px;
+    }
+
+    .card-image {
+        height: 140px;
+    }
+
+    .card h2 {
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 18px;
+    }
+
+    .footer {
+        padding: 30px;
+    }
+
+    .kont_head h1 {
+        font-size: 30px
+    }
+
+    .kontakty ul {
+        padding: 30px;
+    }
+
+    .kontakty ul li i {
+        height: 50px;
+        width: 50px;
+        font-size: 25px;
+        line-height: 50px;
+        margin: 0 15px;
+    }
+    
+    .kontakty ul li p {
+        display: block;
+        font-size: 24px;  
+        text-align: left;
+        margin: auto;
+        transition: 1s;
+    }
+
+    .kontakty ul li p:nth-child(2) {
+        font-size: 16px;
+    }
 }
