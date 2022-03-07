@@ -33,12 +33,34 @@
                 <a href="index.html#kontakt" class="navElem">Kontakt</a>
             </li>
         </ul>
+        <label id="medium">
+          <ul>
+            <li>
+               <a href="index.html#o_predmetu" class="navElem active" data-title="O predmetu"><i class="fa-solid fa-circle-info"></i></a>
+            </li>
+            <li>
+               <a href="index.html#prednasky" class="navElem" data-title="Prednasky"><i class="fa-solid fa-desktop"></i></a>
+            </li>
+            <li>
+              <a href="index.html#vysledky" class="navElem" data-title="Vysledky"><i class="fa-solid fa-square-poll-vertical"></i></a>
+            </li>
+            <li>
+              <a href="index.html#cviceni" class="navElem" data-title="Cviceni"><i class="fa-solid fa-chalkboard-user"></i></a>
+            </li>
+            <li>
+              <a href="index.html#souvisle" class="navElem" data-title="Souvisejici"><i class="fa-brands fa-angellist"></i></a>
+            </li>
+            <li>
+              <a href="index.html#kontakt" class="navElem" data-title="Kontakt"><i class="fa-solid fa-envelope"></i></a>
+            </li>
+          </ul>
+        </label>
         <label id="icon">
             <i class="bi bi-list"></i>
         </label>
     </nav>
       <a name="o_predmetu"></a>
-      <div class="o_predmetu">
+      <div class="o_predmetu" onmouseenter="mouselog(event)">
         <h1><em>ITW</em> - tvorba webových stranek</h1>
         <hr/>
         <p>
@@ -50,7 +72,7 @@
       </div>
       
       <a name="prednasky"></a>
-      <div class="prednasky">
+      <div class="prednasky" onmouseenter="mouselog(event)">
         <div class="sidebar">
           <div style="background: linear-gradient(220.16deg, #e2861d -8%, #af6006 138%);">
             <h1>Prednaska 10</h1>
@@ -120,7 +142,7 @@
           ></div>
           <div
             style="background-image: url('https://images.unsplash.com/photo-1579468118864-1b9ea3c0db4a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')"
-          ></div>
+          ></div>        
           <div
             style="background-image: url('https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')"
           ></div>
@@ -134,8 +156,9 @@
           </button>
         </div>
       </div>
+
       <a name="vysledky"></a>
-      <div class="vysledky">
+      <div class="vysledky" onmouseenter="mouselog(event)">
         <h1>Vysledky</h1>
         <hr/>
         <table class="table">
@@ -185,7 +208,7 @@
       </div>
 
       <a name="cviceni"></a>
-      <div class="practice">
+      <div class="practice" onmouseenter="mouselog(event)">
           <div class="prac_head">
             <h1>Cviceni</h1>
             <hr/>
@@ -237,7 +260,7 @@
       </div>
 
       <a name="souvisle"></a>
-      <div class="souvisle">
+      <div class="souvisle" onmouseenter="mouselog(event)">
         <div class="souv_head">
           <h1>Souvisejici</h1>
           <hr/>
@@ -271,7 +294,7 @@
       </div>
 
       <a name="kontakt"></a>
-      <div class="footer">
+      <div class="footer" onmouseenter="mouselog(event)">
         <div class="kont_head">
           <h1>Kontakty</h1>
           <hr/>
@@ -308,6 +331,6 @@
           </ul>
         </div>
       </div>
-      <script src="cvCards.js"></script>
+      <script src="app.js"></script>
 </body>
 </html>
