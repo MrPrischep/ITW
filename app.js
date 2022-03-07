@@ -6,6 +6,7 @@ const slidesCount = mainSlide.querySelectorAll('div').length;
 const prednasky = document.querySelector('.prednasky');
 const slides = document.querySelectorAll('.slide');
 const navElements = document.querySelectorAll('.navElem');
+// const mainBlocks = document.querySelectorAll('.main-block');
 
 /* SLIDER */
 let activeSlide = 0;
@@ -71,10 +72,6 @@ for (const navElem of navElements) {
     navElem.addEventListener('click', () => {
         clearActiveElement();
         navElem.classList.add('active');
-        setTimeout(() => {
-            clearActiveElement();
-            console.log("hello");
-        }, 1000);
     })
 }
 
@@ -82,4 +79,33 @@ function clearActiveElement() {
     navElements.forEach((navElem) => {
         navElem.classList.remove('active');
     })
+}
+
+function mouselog(event) {
+    if (event.target.classList.value === "o_predmetu") {
+        clearActiveElement();
+        navElements[0].classList.add('active');
+        navElements[6].classList.add('active');
+    } else if (event.target.classList.value === "prednasky") {
+        clearActiveElement();
+        navElements[1].classList.add('active');
+        navElements[7].classList.add('active');
+    } else if (event.target.classList.value === "vysledky") {
+        clearActiveElement();
+        navElements[2].classList.add('active');
+        navElements[8].classList.add('active');
+    } else if (event.target.classList.value === "practice") {
+        clearActiveElement();
+        navElements[3].classList.add('active');
+        navElements[9].classList.add('active');
+    } else if (event.target.classList.value === "souvisle") {
+        clearActiveElement();
+        navElements[4].classList.add('active');
+        navElements[10].classList.add('active');
+    } else if (event.target.classList.value === "footer") {
+        clearActiveElement();
+        navElements[5].classList.add('active');
+        navElements[11].classList.add('active');
+
+    }
 }
