@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css?family=Helvetica&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #0f141e;
+  font-size: 1rem;
+  /* font-weight: normal; */
+  font-family: 'Helvetica', sans-serif;
+  letter-spacing: .02rem;
+}
+
+:root {
+    --navImg: url("/icons/menu_bullet.gif");
+} 
+
+.head {
+    padding-top: 20px;
+    background: rgb(80, 30, 10);
+    /* padding-bottom: 70px; */
+}
+
+.head h1 {
+    font-size: 4rem;
+}
+
+.head a {
+    color: white;
+}
+
+.head a:visited {
+    color: white;
+}
+
+.head h1 {
+    margin-left: 100px;
+}
+
+h2 {
+    margin-left: 100px;
+    color: #c9662e;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.navigator ul {
+    background-color: #c9662e;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding-left: 100px;
+    align-items: center;
+    justify-content: left;
+    /* position: absolute; */
+    /* padding-left: 100px; */
+    /* padding: 1rem; */
+}
+
+.navigator ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-align: center; */
+    padding: 1rem;
+    transition: .5s;
+}
+
+.navigator a {
+    color: white; 
+}
+
+.navigator li:hover{
+    /* text-decoration: underline; */
+    background-color: rgb(80, 30, 10);
+    transition: .5s;
+}
+
+.navigator li:hover a {
+    text-decoration: none;
+}
+
+.navigator a:visited {
+    color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows:  auto auto;
+    grid-template-areas: "prednasky cviceni"
+                         "prehled cviceni";
+    margin: 0 100px;
+}
+
+
+
+.prednasky {
+    grid-area: prednasky;
+    padding-top: 20px;
+}
+
+.prednasky h2 {
+    margin-left: 0;
+}
+
+.head-name {
+    grid-area: pred-head;
+}
+
+.prehled {
+    grid-area: prehled;    
+}
+
+.cviceni {
+    grid-area: cviceni;
+}
+
+footer {
+    background: rgb(80, 30, 10);
+    padding: 0 100px;
+}
+
+.footer {
+    /* grid-area: foot; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "kontakty souvisle some-content";
+}
+
+.some-content {
+    grid-area: some-content;
+    background: rgb(80, 30, 10);
+}
+
+.predmet {
+    background: linear-gradient(0deg, lightgray, white);
+    padding-top: 15px;
+    padding-bottom: 20px;
+}
+
+.predmet .content {
+    max-width: 1000px;
+}
+
+.predmet p {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: 20px
+}
+
+/* .kontakty {
+    margin-top: 50px;
+} */
+
+.kontakty, .souvisle {
+    padding-top: 20px;
+    color: #f1f1f1;
+    padding-right: 20px;
+    /* padding-left: 150px; */
+}
+
+.souvisle {
+    grid-area: souvisle;
+} 
+
+.kontakty h2, .souvisle h2 {
+    margin: 0;
+    color: white;
+}
+
+.list1, .list2 {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.list1 {
+    /* position: absolute; */
+    list-style: none;
+    max-width: 100%;
+}
+
+.list1 li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.list1 a, .list2 a {
+    color: #e48f5e;
+    text-decoration: none;
+}
+
+.list1 a:visited, .list2 a:visited {
+    color: #e48f5e;
+    text-decoration: none;
+}
+
+.list2 {
+    padding-left: 30px;
+    list-style-image: url("/icons/footer_list_bullet.gif");
+    padding-bottom: 10px;
+}
+
+.list2 li {
+    padding: 5px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    color: #c9662e;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.lecture_name {
+    border-bottom: dotted;
+    max-width: 90%;
+    padding-bottom: 5px;
+    border-color: #c9662e;
+    margin-bottom: 15px;
+    margin-left: 70px;
+}
+
+.lecture-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lecture-cards > * {
+    flex: 1 1 50%;
+}
+
+.lecture {
+    display: block;
+    /* margin-top: 20px; */
+    padding: 20px;
+}
+
+/* .lecture:nth-child(even) {
+    padding-left: 20px;
+} */
+
+
+.lecture p {
+    margin-left: 70px;
+}
+
+.lecture img {
+    position: absolute;
+    width: auto;
+}
+
+.lecture a, .cviceni a {
+    color: black;
+    font-weight: 700;
+}
+
+.lecture a:visited, .cviceni a:visited {
+    color: black;
+}
+
+.prehled {
+    padding-bottom: 20px;
+    margin-top: 20px;
+}
+.prehled h2 {
+    margin: 0;
+}
+
+.table {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-right: 20px;
+    margin-top: 10px;
+}
+
+table {
+    /* border: 3px solid #333;  */
+    text-align: center;
+    width: 100%;
+    /* margin-left: -20px; */
+    /* margin-right: 20px; */
+}
+
+.thead {
+    /* border: 2px dotted #333; */
+    background: #df9d77;
+    color: rgb(88, 88, 88)
+}
+
+.thead th, .thead td {
+    /* border-top: 2px dotted black; */
+    /* border-bottom: 2px solid black; */
+    /* border-left: 2px dotted black; */
+    /* border-right: 2px solid black; */
+    padding: 2px auto;
+}
+
+.tbody td {
+    padding: 5px 0;
+}
+
+.tbody td:first-child {
+    text-align: left;
+    /* border-top: 2px solid black; */
+    /* border-bottom: 1px solid grey; */
+}
+
+/* .cviceni-card {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+} */
+
+.cviceni {
+    padding-top: 20px;
+    background: linear-gradient(90deg, lightgray, white);
+    padding-left: 50px;
+}
+
+.cviceni h2 {
+    margin-bottom: 20px;
+}
+
+.cviceni > * {
+    margin-left: 0;
+    /* margin-right: 150px; */
+}
+
+.cvic {
+    border-bottom: dotted;
+    /* max-width: calc(90% - 150px); */
+    padding-bottom: 5px;
+    border-color: #c9662e;
+    margin-bottom: 30px;
+    min-height: 75px;
+}
+
+.cvic p:nth-child(1) {
+    margin-bottom: 20px;
+}
+
+.cvic p:nth-child(3) {
+    margin-left: 60px;
+    padding-bottom: 5px;
+
+}
+
+.cvic img {
+    /* position: absolute; */
+    float: left;
+    width: auto;
+}
+
+/* .imagetip:hover ::after {
+    display: block;
+    text-align: center;
+    content: var(--navImg);
+    margin-top: 5px;
+    margin-left: 25px;
+} */
+
+@media (max-width: 1199px) {
+    .grid-container {
+        margin: 0 20px;
+    }
+    .head h1 {
+        margin-left: 20px;
+    }
+    h2 {
+        margin-left: 20px;
+    }
+    .navigator ul {
+        padding-left: 20px;
+    }
+    .predmet p {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .cviceni {
+        padding-left: 20px;
+    }
+    .kontakty  {
+        padding-right: 0;
+    }
+    .souvisle, .kontakty {
+        padding-left: 20px;
+    }
+    footer {
+        padding: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .lecture-cards {
+        flex-direction: column;
+        /* display: flex; */
+        /* flex-wrap: wrap; */
+    }
+    .kontakty {
+        max-width: 350px;
+    }
+    .footer {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "kontakty souvisle";
+    }
+}
+
+@media (max-width: 767px) {
+    .grid-container {
+        grid-template-columns: 100%;
+        grid-template-rows:  auto auto auto;
+        grid-template-areas: "prednasky"
+                             "prehled"
+                             "cviceni";
+        margin: 0;
+    }
+    .navigator ul {
+        margin-top: 20px;
+    }
+    .cviceni {
+        padding-right: 20px;
+    }
+    .cvic {
+        height: 100px;
+    }
+    .prednasky, .prehled {
+        padding: 0 20px;
+    }
+    .table {
+        display: block;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .footer {
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        grid-template-areas: "kontakty"
+                             "souvisle";
+    }
+
+}
