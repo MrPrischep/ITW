@@ -1,0 +1,799 @@
+/*
+ * Login: xkozhe00
+ * Author: Kozhevnikov Dmitrii
+ *
+ * Doplnte sve reseni.
+ *
+ * Nezapomente pridat strucne hromadne komentare pro pravidla jednotlivych sekci
+ * a pro netrivialni useky kodu (napr. bubliny v sekci #refs)
+ */
+
+ /* nastavení počátečních hodnot */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* nastavení konstant */
+:root {
+    /* Odsazení */
+    --praveALeveOdsazeni: 20px;
+    --spodniOdsazeni: 80px;
+    --horniOdsazeni: 60px;
+
+    /* Velikost textu */
+    --mensiText: 14px;
+    --vetsiText: 18px;
+    --vyskaRadku: 1.7;
+    --vetsiNadpis: 40px;
+    --mensiNadpis: 32px;
+    --tretiNadpis: 24px;
+
+    /* Barvy */
+    --zakladniSeda: #898989;
+    --svetleSeda: #bfbfbf;
+    --tmaveSeda: #4d4d4d;
+    --nevyrazna: #f7f7f7;
+    --cerna: black;
+    --bila: white;
+    --decorace: steelblue;
+}
+
+/* nastavení písma pro cely dokument */
+body {
+    font-family: 'PT Sans', sans-serif;
+    line-height: var(--vyskaRadku);
+}
+
+/* nastavení velikostí kontejnerů obsahujících základní informace a jejich odsazení
+ * kontejnery jsou realizovány pomocí flexboxu 
+ */
+.content {
+    display: flex;
+    flex-direction: column;
+    min-width: 768px;
+    max-width: 1200px;
+    margin: auto;
+    padding-left: var(--praveALeveOdsazeni);
+    padding-right: var(--praveALeveOdsazeni);
+}
+
+/* HEADER */
+header {
+    width: 100%;
+    height: 100vh;
+    min-height: 400px;
+    background-image: url(/img/header.jpg);   
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 400px;
+    background-position: 100%;
+}
+
+/* Kontejner v headeru je realizován pomocí grid-template-areas, 
+ * aby hlavni nadpis byla umistena v 2/3 zahlavi
+ */
+header .content {
+    height: 100%;
+    display: grid; 
+    grid-template-columns: 100%;
+    grid-template-rows:  1fr 2fr;
+    grid-template-areas: "navigation"
+                         "hlavniNadpis";
+}
+
+header #header-menu {
+    grid-area: navigation;
+    margin-top: 10px;    
+}
+
+header #header-title {
+    grid-area: hlavniNadpis;
+}
+
+header #logo {
+    font-size: 25px;
+    font-family: 'Special Elite';
+    color: var(--decorace);
+    float: left;
+}
+
+header #logo a, header #logo a:visited {
+    text-decoration: none;
+    color: var(--decorace);
+}
+
+header #logo a:hover {
+    color: var(--bila);
+}
+
+header #contacts {
+    text-align: right;
+    color: var(--zakladniSeda);
+    font-size: var(--mensiText);
+}
+
+header #contacts span:nth-child(1) {
+    margin-right: 10px;
+}
+
+header #contacts i {
+    margin-right: 5px;
+}
+
+header #contacts a, header #contacts a:visited {
+    color: var(--zakladniSeda);
+    text-decoration: none;
+}
+
+header #contacts a:hover {
+    color: var(--bila);
+}
+
+header #header-menu i, header #header-menu i:visited {
+    color: var(--decorace);  
+}
+
+header #networks i:hover {
+    color: var(--bila);  
+}
+
+#networks {
+    text-align: right;
+    float: right;
+    margin-top: 10px;
+}
+
+#networks span {
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+nav {
+    display: block;
+    font-size: 13px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    text-align: left;
+    margin-top: 20px;
+    clear: left;
+    margin-top: 10px;
+}
+
+nav ul {
+    float: left;
+}
+
+nav ul li {
+    display: inline-block;   
+}
+
+nav ul li a, nav ul li a:visited {
+    text-decoration: none;
+    color: var(--svetleSeda);
+    padding: 5px 15px;
+    border: 1px solid transparent;
+    transition: .5s;
+}
+
+nav ul li a:hover {
+    border-color: var(--decorace);
+    transition: .5s;
+}
+
+header #header-title {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+header #header-title h1 {
+    font-size: 64px;
+    color: var(--bila);
+    margin-bottom: 20px;
+}
+
+header #get-started {
+    display: block;
+    width: max-content;
+    font-size: var(--vetsiText);
+    padding: 20px;
+    border: 2px solid var(--zakladniSeda);
+    border-radius: 15px;
+}
+
+header #get-started a, header #get-started a:visited {
+    color: var(--zakladniSeda);
+    text-decoration: none;
+}
+
+header #get-started:hover {
+    background: var(--decorace);
+    border: 2px solid var(--decorace);
+    transition: .5s;
+}
+
+header #get-started:hover a {
+    color: var(--bila);
+    transition: .5s;
+}
+
+/* nastaveni odsazeni pro sekce */
+section {
+    margin-top: var(--horniOdsazeni);
+    margin-bottom: var(--spodniOdsazeni);
+}
+
+.content h2 {
+    font-size: var(--vetsiNadpis);
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--cerna);
+}
+
+/* SERVICES */
+#services p {
+    text-align: center;
+    color: var(--zakladniSeda);
+    font-size: var(--vetsiText);
+    padding: 0 20px; 
+}
+
+/* Realizace se provádí pomocí flexboxu, což vám umožní přidat kartu 
+ * na příslušné místo. K tomu dochází, protože sudé a liché karty jsou 
+ * zpracovány různými způsoby pomoci :nth-child(odd) a :nth-child(even)
+ */
+.services-column:nth-child(odd) {
+    display: flex;
+    justify-content: right;
+    align-items: right;
+    position: relative;
+    width: 50%;
+    float: left;
+    padding-right: 20px;
+}
+
+.services-column:nth-child(even) {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    position: relative;
+    width: 50%;
+    float: right;
+    padding-left: 20px;
+}
+
+#services .services-card {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    border: 1px solid var(--nevyrazna);
+    border-radius: 5px;
+    box-shadow: var(--svetleSeda) 0px 0px 10px 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    transition: .5s;
+}
+
+#services .services-card p {
+    font-size: var(--mensiText);
+    color: var(--svetleSeda);
+}
+
+#services .services-card:hover {
+    box-shadow: var(--decorace) 0px 0px 10px 0px;
+}
+
+#services .services-card h3 {
+    color: black;
+    font-size: var(--tretiNadpis);
+    margin-top: 10px;
+}
+
+.services-card img {
+    border: 1px solid var(--decorace);
+    border-radius: 5px;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    display: inline;
+}
+
+/* Skrytí karty při zobrazení pomoci display:none. 
+ * Tato karta se stává aktivní, pri navedeni kurzoru myší
+ */
+.services-card img:nth-child(2){
+    display: none;
+    background: var(--decorace);
+}
+
+.services-card:hover img:nth-child(1) {
+    display: none;
+}
+
+.services-card:hover img:nth-child(2) {
+    display: inline;
+}
+
+/* ABOUT */
+#about {
+    clear: both;
+    background: #f7f7f7;
+    padding-bottom: var(--spodniOdsazeni);
+    margin-bottom: 0;
+}
+
+.about-item {
+    padding-top: var(--horniOdsazeni);
+    text-align: justify;
+}
+
+.about-item h2 {
+    text-transform: none;
+    text-align: left;
+    color: var(--cerna);
+    font-size: var(--mensiNadpis);
+    padding-bottom: 30px;
+}
+
+.about-item p {
+    color: var(--zakladniSeda);
+    font-size: var(--vetsiText);
+}
+
+/* Realizace obrazku a animace zvetseni pri navedeni kurzoru */
+.about-item img {
+    border-radius: 5px;
+    width: 40%;
+    transition: .5s;
+    margin-bottom: 40px;
+}
+
+.about-item img:hover {
+    width: 50%;
+}
+
+/* S odkazem na sudé/liché potomky, provádí střídání obrazu 
+ * na levé/pravé straně web stranky
+ */
+.about-item:nth-child(odd) > img {
+    float: left;
+    margin-right: 80px;
+}
+
+.about-item:nth-child(even) > img {
+    float: right;
+    margin-left: 80px;
+}
+
+/* TEAM */
+/* Implementace kontejneru se provádí pomocí gridu, 
+ * takže karty zabírají stejné množství prostoru. 
+ * Možné a realizovatelné jinými způsoby (například pomocí flexboxu)
+ */
+#team .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: max-content max-content;
+    grid-template-areas: "teamHead teamHead teamHead teamHead"
+                         "teamCard teamCard teamCard teamCard";
+}
+
+#team h2 {
+    margin-bottom: 40px;
+    grid-area: teamHead;
+}
+
+.team-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--svetleSeda) 0px 0px 10px 0px;
+    border-radius: 10px;
+    margin: 0 10px;
+    transition: .5s;
+    text-align: center;
+    align-items: center;
+}
+
+.team-card:hover {
+    transition: .5s;
+    box-shadow: var(--decorace) 0px 0px 10px 0px;
+}
+
+.team-card:hover h3 {
+    color: var(--decorace);
+}
+
+.team-card img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.team-card h3 {
+    font-size: var(--tretiNadpis);
+    margin-top: 30px;
+}
+
+.team-card h4 {
+    font-size: var(--vetsiText);
+    color: var(--zakladniSeda);
+}
+
+.team-card p {
+    font-size: var(--mensiText);
+    color: var(--svetleSeda);
+    padding: 5px 5px 20px 5px;
+}
+
+/* STATS */
+/* Implementace kontejneru se provádí pomocí flexboxu 
+ * Karty maji stejnou sirku a umisteny pomoci space-around.
+ */
+#stats {
+    border-top: 1px dashed var(--cerna);
+    margin: 0;
+    padding-top: var(--horniOdsazeni);
+    padding-bottom: var(--spodniOdsazeni);
+}
+
+#stats > .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.stats-card {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: var(--tmaveSeda);
+    max-width: 300px;
+    margin: 0 10px;
+    width: 100%;
+    border-radius: 5px;
+    padding-bottom: 10px;
+}
+
+/* Realizace icony pomoci pridani dalsiho elementu */
+.stats-card i::before {
+    font-size: 32px;
+    position: relative;
+    top: -16px;
+    background: white;
+    border-radius: 50%;
+    border: 10px solid white;
+    color: var(--decorace);
+}
+
+.stats-card h3 {
+    color: white;
+    font-size: var(--tretiNadpis);
+}
+
+.stats-card p {
+    font-size: var(--mensiText);
+    color: var(--svetleSeda);
+}
+
+/* Zmena barvy pri navedeni kurzoru mysi.
+ * Muzeme pridat "transition: .5s" pro karticky, aby animace byla plynulejší, 
+ * ale nevidim to na demonstracnim videa, tak toto realizovano bez animace
+ */
+.stats-card:hover {
+    background: var(--decorace);
+}
+
+/* PRICE */
+#price {
+    margin-top: 0;
+    margin-bottom: 0;
+    background: var(--nevyrazna);
+    padding-bottom: 60px;
+    padding-top: var(--horniOdsazeni);
+}
+
+#price .content {
+    justify-content: center;
+    align-items: center;
+}
+
+#price h2 {
+    font-size: var(--mensiNadpis);
+    text-transform: none;
+    padding-bottom: 20px;
+}
+
+/* realizace stylu tabulky */
+#price table {
+    width: 80%;
+    display: table;
+    table-layout: auto;
+    border-collapse: separate;
+    border-spacing: 0 20px;
+}
+
+/* Pridani contentu, aby tabulka byla cela po realizace borderu mezi radky tabulky */
+#price thead tr::before, #price thead tr::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#price tbody tr {
+    position: relative;
+}
+
+/* Realizace borderu mezi řádky tabulky */
+#price tbody tr::before, #price tbody tr::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px dotted var(--decorace);
+}
+
+#price tbody tr::after {
+    top: auto;
+    bottom: 0;
+}
+
+/* Zbarvení řádku tabulky v bílé barvě při vznášení. 
+ * Animace také nebyla implementována, protože není vidět na demo videu,
+ * ale mozne ji přidat pomoci "transition: .5s"
+ */
+#price tbody tr:hover {
+    background: var(--bila);
+}
+
+#price th {
+    padding: 20px;
+    text-align: left;
+    font-size: var(--mensiText);
+}
+
+#price td {
+    padding: 20px;
+    font-size: var(--mensiText);
+    color: var(--zakladniSeda)
+}
+
+#price tbody td ul {
+    list-style-position: inside;
+}
+
+#price tbody td ul li:nth-child(1) {
+    list-style: none;
+    font-weight: 800;
+}
+
+#price tbody td button {
+    padding: 20px;
+    background: var(--nevyrazna);
+    border-radius: 5px;
+    border: 1px solid var(--decorace);
+}
+
+#price tbody td button:hover {
+    background: var(--decorace);
+    color: var(--bila);
+}
+
+/* REFS */
+#refs {
+    border-bottom: 1px dashed var(--cerna);
+    margin-bottom: 0;
+    padding-bottom: 120px;
+}
+
+#refs .content {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.refs-card {
+    width: 30%;
+    max-width: 400px;
+}
+
+.refs-card blockquote {
+    display: block;
+    background: var(--tmaveSeda);
+    color: var(--bila);
+    font-size: var(--mensiText);
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+/* Implementace dalšího bloku ve tvaru trojúhelníku. 
+ * Vyrobeno pomocí vytvoření prázdného bloku, barvení v požadované barvě 
+ * a oříznutí pomocí "border-top" a "border-right"
+ */
+.refs-card blockquote::after {
+    display: block;
+    position: absolute;
+    content: '';
+    margin-left: 40px;
+    margin-top: 20px;
+    top: auto;
+    left: auto;
+    background: var(--tmaveSeda);
+    border-top: 20px solid var(--tmaveSeda);
+    border-right: 20px solid var(--bila);
+}
+
+/* Přidání dalšího bloku, ktere přidává dvojité uvozovky před textem v kartě */
+.refs-card blockquote span::before {
+    position: relative;
+    top: -22px;
+    color: var(--decorace);
+    content: '\"';
+    font-style: italic;
+    font-size: 64px;
+    float: left;
+    margin: 0 5px;
+}
+
+/* Zmena barvy pro karticky, text a uvozovky.
+ * Dobu animace take muzeme pridat pomoci "transition: .5s"
+ */
+.refs-card blockquote:hover {
+    background: var(--decorace);
+}
+
+.refs-card blockquote:hover::after {
+    border-top-color: var(--decorace);
+}
+
+.refs-card blockquote:hover span::after {
+    color: var(--decorace);
+}
+
+.refs-card blockquote:hover span::before {
+    color: var(--bila);
+}
+
+.refs-card figure {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.refs-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.refs-card h3 {
+    color: var(--zakladniSeda);
+    font-size: var(--mensiText);
+    font-weight: 500;
+}
+
+/* CONTACT */
+#contact {
+    margin-bottom: 0;
+    padding-bottom: var(--spodniOdsazeni);
+}
+
+/* Realizace kontaktu je realizována pomocí gridu. 
+ * 50% bere mapa a 50% bere formulář
+ */
+#contact .content {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: "contactHead contactHead"
+                         "map inputs";
+}
+
+#contact h2 {
+    grid-area: contactHead;
+    margin-bottom: 20px;
+}
+
+#contact #map {
+    height: 400px;
+}
+
+#contact form {
+    padding: 20px 20px 0px 20px;
+}
+
+#contact input, #contact textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    font-size: var(--mensiText);
+    border-radius: 5px;
+    color: var(--decorace);
+    outline: none;
+    border: 1px solid var(--decorace);
+}
+
+#contact textarea {
+    vertical-align: top;
+    max-width: 100%;
+}
+
+#contact input::placeholder, #contact textarea::placeholder {
+    color: var(--decorace);
+}
+
+/* Pridani borderu pri fokusu na nejakem poli */
+#contact input:focus, #contact textarea:focus {
+    border: 2px solid var(--tmaveSeda);
+}
+
+/* Kontrola nevalidnych dat v pole inputu */
+#contact form input:invalid {
+    color: red;
+    caret-color: black;
+}
+
+#contact input:nth-child(1) {
+    margin-right: 20px;
+    float: left;
+}
+
+/* umisteni inputu Name a Email v 1 radek */ 
+#contact input:nth-child(1), #contact input:nth-child(2) {
+    width: calc(50% - 10px);
+}
+
+/* Pridani stylu pro tlacitko Submit */
+#contact input:nth-child(5) {
+    width: 50%;
+    margin-left: 25%;
+    background: var(--decorace);
+    color: var(--bila);
+}
+
+/* Zmena barvy tlacitka Submit.
+ * Muzeme pridat animace zmene barvy pomoci "transition: .5s"
+ */
+#contact input:nth-child(5):hover {
+    background: green;
+}
+
+/* FOOTER */
+footer {
+    padding: 40px 0;
+    background: var(--cerna);
+    color: var(--bila);
+}
+
+footer .content {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+footer span {
+    color: var(--zakladniSeda);
+    font-size: var(--mensiText);
+}
+
+footer span a {
+    text-decoration: none;
+    color: var(--decorace);
+}
+
+footer span a:visited {
+    color: var(--decorace);
+}
