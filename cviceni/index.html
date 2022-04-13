@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ITW - tvorba webových stránek</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> -->
+    <script src="https://kit.fontawesome.com/d9a54c0fdb.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script src="navMenu.js"></script>
+
+
+</head>
+<body>
+    
+        <div class="head" onmouseenter="mouselog(event)">
+            <h1><a href="#">ITW</a></h1>
+            <h2>Tvorba webových stránek</h2>
+            
+        </div>
+        
+        <div class="navigator">
+            <label id="mainHead">
+
+            <ul>
+                <li class="imagetip active"><a href="index.html" ><i class="fa-solid fa-house"></i>Index</a></li>
+                <li class="imagetip"><a href="#o_predmetu" ><i class="fa-solid fa-circle-info"></i>O předmětu</a></li>
+                <li class="imagetip"><a href="#prednasky" ><i class="fa-solid fa-desktop"></i>Přednášky</a></li>
+                <li class="imagetip"><a href="#prehled" ><i class="fa-solid fa-square-poll-vertical"></i>Výsledky</a></li>
+                <li class="imagetip"><a href="#cviceni" ><i class="fa-solid fa-chalkboard-user"></i>Cvičení</a></li>
+                <li class="imagetip"><a href="#kontakt" ><i class="fa-solid fa-envelope"></i>Kontakt</a></li>
+                <li class="imagetip"><a href="#souvisle" ><i class="fa-brands fa-angellist"></i>Související</a></li>
+            </ul>
+            </label>
+            <label id="medium">
+                <ul>
+                    <li class="imagetip active" >
+                        <a href="index.html"><i class="fa-solid fa-house"></i>Index</a>
+                    </li>
+
+                  <li class="imagetip" data-title="O predmetu">
+                     <a href="index.html#o_predmetu"  ><i class="fa-solid fa-circle-info"></i></a>
+                  </li>
+                  <li class="imagetip" data-title="Prednasky">
+                     <a href="index.html#prednasky"  ><i class="fa-solid fa-desktop"></i></a>
+                  </li>
+                  <li class="imagetip" data-title="Vysledky">
+                    <a href="index.html#vysledky"  ><i class="fa-solid fa-square-poll-vertical"></i></a>
+                  </li>
+                  <li class="imagetip" data-title="Cviceni">
+                    <a href="index.html#cviceni"  ><i class="fa-solid fa-chalkboard-user"></i></a>
+                  </li>
+                  <li class="imagetip" data-title="Kontakt">
+                    <a href="index.html#kontakt"  ><i class="fa-solid fa-envelope"></i></a>
+                  </li>
+                  <li class="imagetip" data-title="Souvisejici">
+                    <a href="index.html#souvisle"  ><i class="fa-brands fa-angellist"></i></a>
+                  </li>
+                  
+                </ul>
+              </label>
+              <label id="icon">
+                <i class="fa-solid fa-list"></i>
+              </label>
+        </div>
+        <a name="o_predmetu"></a>
+        <div class="predmet" onmouseenter="mouselog(event)">
+            <h2>O předmětu ITW - tvorba webových stránek</h2>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+                It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+                It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+                and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </p>
+        </div>
+    
+    <div class="grid-container">
+        <div class="prednasky" onmouseenter="mouselog(event)">
+            <div class="head-name">
+                <p><a name="prednasky"></a></p>
+                <h2>Přednášky</h2>
+            </div>
+            <div class="lecture-cards">
+                <div class="lecture">
+                    <img class="icon" src="/icons/icon2.gif" alt="My Icon">
+                    <div class="lecture_name"> 
+                        <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p01/prednaska.html" target="_blank">
+                            Internet a služba WWW
+                        </a>
+                    </div>
+                    <p>Dulezita informace o predmetu ITW: principy WWW, adresovani a umisteni documentu</p>
+                </div>
+
+                <div class="lecture">
+                    <img class="icon" src="/icons/icon1.gif" alt="My Icon">
+                    <div class="lecture_name"> 
+                        <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p02/prednaska.html" target="_blank">
+                            Značkovací jazyky: HTML
+                        </a>
+                    </div>
+                    <p>Jazyk HTML a pravidla jeho pouziti</p>
+                </div>
+
+                <div class="lecture">
+                    <img class="icon" src="/icons/icon4.gif" alt="My Icon">
+                    <div class="lecture_name"> 
+                        <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p03/prednaska.html" target="_blank">
+                            Kaskádové styly (CSS)
+                        </a>
+                    </div>
+                    <p>Pouziti stylu CSS</p>
+                </div>
+
+                <div class="lecture">
+                    <img class="icon" src="/icons/icon3.gif" alt="My Icon">
+                    <div class="lecture_name"> 
+                        <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/prednasky/p04/prednaska.html" target="_blank">
+                            Základní mechanismy CSS
+                        </a>
+                    </div>
+                    <p>Jak spravne pouzivat CSS</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="prehled" onmouseenter="mouselog(event)">
+            <p><a name="prehled"></a></p>
+            <h2>Přehled výsledků</h2>
+            <div class="table">
+                <table>
+                    <thead class="thead">
+                        <tr>
+                            <th rowspan="3">
+                                Jmeno
+                            </th>
+                            <th colspan="6">Body</th>
+                        </tr>
+                        <tr>
+                            <th colspan="2">2020</th>
+                            <th colspan="2">2021</th>
+                            <th colspan="2">2022</th>
+                        </tr>
+                        <tr>
+                            <td>Pulsem.</td>
+                            <td>Zk.</td>
+                            <td>Pulsem.</td>
+                            <td>Zk.</td>
+                            <td>Pulsem.</td>
+                            <td>Zk.</td>
+                            
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <tr>
+                            <td>Jan Novak</td>
+                            <td>18</td>
+                            <td>72</td>
+                            <td>20</td>
+                            <td>80</td>
+                            <td>10</td>
+                            <td>-</td>
+                        </tr>
+                        <tr>
+                            <td>Zuzana Cerna</td>
+                            <td>10</td>
+                            <td>50</td>
+                            <td>20</td>
+                            <td>75</td>
+                            <td>25</td>
+                            <td>99</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="cviceni" onmouseenter="mouselog(event)">
+            <p><a name="cviceni"></a></p>
+            <h2>Cvičení</h2>
+            <div class="cvic">
+                <p> 
+                    <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c1" target="_blank">
+                        DNS a HTTP
+                    </a>
+                </p>  
+                <img class="icon" src="/icons/news_icon.gif" alt="My Icon"/>
+                <p>Contrary to popular belief, Lorem Ipsum is not simply random text</p>
+            </div>
+            <div class="cvic">
+                <p> 
+                    <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c2" target="_blank">
+                        Jazyk HTML
+                    </a>
+                </p>
+                <img class="icon" src="/icons/news_icon.gif" alt="My Icon"/>
+                
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+            </div>
+            <div class="cvic">
+                <p> 
+                    <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c3" target="_blank">
+                        Styl textu
+                    </a>
+                </p>
+                <img class="icon" src="/icons/news_icon.gif" alt="My Icon"/>
+                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+            </div>
+            <div class="cvic">
+                <p> 
+                    <a href="https://www.fit.vutbr.cz/study/courses/ITW/private/cviceni/#c4" target="_blank">
+                        CSS rozložení stránky
+                    </a>
+                </p>
+                <img class="icon" src="/icons/news_icon.gif" alt="My Icon"/>
+                <p>It has survived not only five centuries, but also the leap into electronic typesetting</p>
+            </div>
+        </div>
+    </div>
+        <footer>
+            <div class="footer">
+                <div class="kontakty" onmouseenter="mouselog(event)">
+                    <p><a name="kontakt"></a></p>
+                    <h2>Kontaktujte nás</h2>
+                    <ol class="list1">
+                        <li>Garant: <a href="mailto:itw-garant@fit.vutbr.cz">itw-garant@fit.vutbr.cz</a></li>
+                        <li>Přednášející: <a href="mailto:itw-prednasejici@fit.vutbr.cz">itw-prednasejici@fit.vutbr.cz</a></li>
+                        <li>Cvičící: <a href="mailto:itw-cvicici@fit.vutbr.cz">itw-cvicici@fit.vutbr.cz</a></li>
+                    </ol>
+                </div>
+
+                <div class="souvisle" onmouseenter="mouselog(event)">
+                    <p><a name="souvisle"></a></p>
+                    <h2>Související předměty</h2>
+                    <ul class="list2">
+                        <li><a href="https://www.fit.vut.cz/study/course/IIS/.cs" target="_blank">Informační systémy</a></li>
+                        <li><a href="https://www.fit.vut.cz/study/course/PIS/.cs" target="_blank">Pokročilé informační systémy</a></li>
+                        <li><a href="https://www.fit.vut.cz/study/course/AIS/.cs" target="_blank">Analýza informačních systémů</a></li>
+                        <li><a href="https://www.fit.vut.cz/study/course/244880/.cs" target="_blank">Skriptovací jazyky</a></li>
+                    </ul>
+                </div>
+                <div class="some-content"></div>
+            </div>
+        </footer>
+      <script src="app.js"></script>
+
+</body>
+</html>
